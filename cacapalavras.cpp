@@ -52,6 +52,8 @@ int main()
         {'X', 'E', 'W', 'H', 'Y', 'S', 'O', 'A', 'V', 'J'}};
 
     int tema = 1;
+
+    // escolha do tema
     do
     {
         if (tema < 1 || tema > 3)
@@ -68,11 +70,13 @@ int main()
 
     if (tema == 1)
     {
+        // variaveis para armazenar as palavras
         char animais1[100], animais2[100], animais3[100], animais4[100], animais5[100], animais6[100], animais7[100];
         imprimirmatriz(matrizAnimais);
 
         int n, m, p, restantes = 7;
 
+        // loop para procurar as palavras, você só sai do loop quando encontrar todas as palavras.
         do
         {
             do
@@ -93,7 +97,7 @@ int main()
                 cout << "Digite as palavras que deseja procurar: ";
             }
             
-
+            // checa se a palavra existe de acordo com a quantidade de palavras que o usuário digitou
             if (n == 1)
             {
                 cin >> animais1;
@@ -150,7 +154,8 @@ int main()
                 restantes = checar(matrizAnimais, animais6, m, p, restantes);
                 restantes = checar(matrizAnimais, animais7, m, p, restantes);
             }
-
+            
+            // imprime quantas palavras foram encontradas e quantas restam
             cout << "Voce encontrou " << 7 - restantes << " palavras" << endl;
             cout << "Restam " << restantes << " palavras" << endl;
 
@@ -159,11 +164,13 @@ int main()
 
     if (tema == 2)
     {
+        // variaveis para armazenar as palavras
         char frutas1[100], frutas2[100], frutas3[100], frutas4[100], frutas5[100], frutas6[100];
         imprimirmatriz(matrizFrutas);
 
         int n, m, p, restantes = 6;
 
+        //loop para procurar as palavras, você só sai do loop quando encontrar todas as palavras.
         do
         {
             do
@@ -184,6 +191,7 @@ int main()
                 cout << "Digite as palavras que deseja procurar: ";
             }
 
+            // checa se a palavra existe de acordo com a quantidade de palavras que o usuário digitou
             if (n == 1)
             {
                 cin >> frutas1;
@@ -230,6 +238,7 @@ int main()
                 restantes = checar(matrizFrutas, frutas6, m, p, restantes);
             }
 
+            // imprime quantas palavras foram encontradas e quantas restam
             cout << "Voce encontrou " << 6 - restantes << " palavras" << endl;
             cout << "Restam " << restantes << " palavras" << endl;
 
@@ -238,11 +247,13 @@ int main()
 
     if (tema == 3)
     {
+        // variaveis para armazenar as palavras
         char profissoes1[100], profissoes2[100], profissoes3[100], profissoes4[100], profissoes5[100], profissoes6[100];
         imprimirmatriz(matrizProfissoes);
 
         int n, m, p, restantes = 6;
 
+        //loop para procurar as palavras, você só sai do loop quando encontrar todas as palavras.
         do
         {
             do
@@ -263,6 +274,7 @@ int main()
                 cout << "Digite as palavras que deseja procurar: ";
             }
 
+            // checa se a palavra existe de acordo com a quantidade de palavras que o usuário digitou
             if (n == 1)
             {
                 cin >> profissoes1;
@@ -309,6 +321,7 @@ int main()
                 restantes = checar(matrizProfissoes, profissoes6, m, p, restantes);
             }
 
+            // imprime quantas palavras foram encontradas e quantas restam
             cout << "Voce encontrou " << 6 - restantes << " palavras" << endl;
             cout << "Restam " << restantes << " palavras" << endl;
 

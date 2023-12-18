@@ -27,65 +27,62 @@ int checar(char matriz[10][10],char vetor[],int m,int p,int restantes)
     
 
     for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < p; j++)
+        {
+            if (matriz[i][j] == vetor[0])
             {
-                for (int j = 0; j < p; j++)
+                // checa horizontal
+                int cont = 0;
+                for (int k = 0; k < tamanho; k++)
                 {
-                    if (matriz[i][j] == vetor[0])
+                    if (matriz[i][j + k] == vetor[k])
                     {
-                        // checa horizontal
-                        int cont = 0;
-                        for (int k = 0; k < tamanho; k++)
-                        {
-                            if (matriz[i][j + k] == vetor[k])
-                            {
-                                cont++;
-                            }
-                        }
-                        if (cont == tamanho)
-                        {
-                            cout << "A palavra " << vetor << " foi encontrada horizontalmente na linha " << i << " e coluna " << j << endl;
-                            
-                            restantes--;
-                            return restantes;
-                        }
-
-                        // checa vertical
-                        cont = 0;
-                        for (int k = 0; k < tamanho; k++)
-                        {
-                            if (matriz[i + k][j] == vetor[k])
-                            {
-                                cont++;
-                            }
-                        }
-                        if (cont == tamanho)
-                        {
-                            cout << "A palavra " << vetor << " foi encontrada verticalmente na linha " << i << " e coluna " << j << endl;
-                           
-                            restantes--;
-                            return restantes;
-                        }
-
-                        // checa diagonal
-                        cont = 0;
-                        for (int k = 0; k < tamanho; k++)
-                        {
-                            if (matriz[i + k][j + k] == vetor[k])
-                            {
-                                cont++;
-                            }
-                        }
-                        if (cont == tamanho)
-                        {
-                            cout << "A palavra " << vetor << " foi encontrada diagonalmente na linha " << i << " e coluna " << j << endl;
-                         
-                            restantes--;
-                            return restantes;
-                        }
-                    }  
+                        cont++;
+                    }
                 }
-            }
-            cout << "A palavra " << vetor << " nao foi encontrada" << endl;
-         
-            return restantes;
+                if (cont == tamanho)
+                {
+                    cout << "A palavra " << vetor << " foi encontrada horizontalmente na linha " << i << " e coluna " << j << endl;
+                    
+                    restantes--;
+                    return restantes;
+                }
+                // checa vertical
+                cont = 0;
+                for (int k = 0; k < tamanho; k++)
+                {
+                    if (matriz[i + k][j] == vetor[k])
+                    {
+                        cont++;
+                    }
+                }
+                if (cont == tamanho)
+                {
+                    cout << "A palavra " << vetor << " foi encontrada verticalmente na linha " << i << " e coluna " << j << endl;
+                   
+                    restantes--;
+                    return restantes;
+                }
+                // checa diagonal
+                cont = 0;
+                for (int k = 0; k < tamanho; k++)
+                {
+                    if (matriz[i + k][j + k] == vetor[k])
+                    {
+                        cont++;
+                    }
+                }
+                if (cont == tamanho)
+                {
+                    cout << "A palavra " << vetor << " foi encontrada diagonalmente na linha " << i << " e coluna " << j << endl;
+                 
+                    restantes--;
+                    return restantes;
+                }
+            }  
+        }
+    }
+    cout << "A palavra " << vetor << " nao foi encontrada" << endl;
+    return restantes;
 }
