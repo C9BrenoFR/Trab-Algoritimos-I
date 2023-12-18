@@ -332,3 +332,7 @@ int main()
 
     return 0;
 }
+
+// No trabalho não houve comentarios sobre os membros, pois o trabalho foi feito em conjunto usando o live share.
+// Todos os membros do grupo participaram igualmente do trabalho, não houve
+// nenhuma parte feita individualmente. Todos os membros estavam trabalhando juntos, em todo o codigo
